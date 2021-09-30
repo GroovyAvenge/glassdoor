@@ -105,6 +105,8 @@ def get_jobs(keyword, num_jobs, verbose, path, slp_time):
             pass
         
         job_buttons = driver.find_element_by_css_selector("#MainCol > div:nth-child(1) > ul")
+   
+        job_buttons = driver.find_el
         
         #job_buttons = driver.find_elements_by_class_name("jl")  #jl for Job Listing. These are the buttons we're going to click.
         print('job buttons')
