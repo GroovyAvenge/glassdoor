@@ -7,6 +7,8 @@ Created on Wed Sep 29 09:25:42 2021
 """
 
 import pandas as pd 
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 df = pd.read_csv('glassdoor.csv')
 
@@ -70,6 +72,17 @@ df['excel'] = df['Job Description'].apply(lambda x: 1 if 'excel' in x.lower() el
 df.excel.value_counts()
 
 #df.columns
+
+df_cat = [['Location','Headquarters','Size','Type of ownership', 'Industry', 'Sector', 'Revenue', 'company_txt', 
+    'job_state', 'spark', 'aws', 'excel', 'job_simp', 'seniority']]
+
+for i in df_cat:
+    cat_num = df_cat[i].value_counts()
+    sns.barplot(x=cat_num.index, y=cat_num)
+    plt.show()
+    
+    
+    
 
 #df_out = df.drop(['Unnamed: 0'], axis =1)
 
